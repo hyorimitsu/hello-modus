@@ -1,0 +1,17 @@
+setup_base("local") :-
+    from("golang:1.19.0-alpine3.15")
+        ::set_workdir("/go/src/github.com/hyorimitsu/hello-modus/argument")
+        ::set_env("ENV", "local").
+
+setup_base("prod") :-
+    from("golang:1.19.0-alpine3.15")
+        ::set_workdir("/go/src/github.com/hyorimitsu/hello-modus/argument")
+        ::set_env("ENV", "prod").
+
+app(profile) :-
+    (
+        setup_base(profile),
+        copy("./", "./"),
+        run("go mod download")
+    )
+    ::set_cmd(["go", "run", "main.go"]).
