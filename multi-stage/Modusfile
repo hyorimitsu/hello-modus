@@ -1,0 +1,17 @@
+builder(output) :-
+    (
+        from("golang:1.19.0-alpine3.15")
+            ::set_workdir("/go/src/github.com/hyorimitsu/hello-modus/multi-stage")
+            ::set_env("CGO_ENABLED", "0")
+            ::set_env("GOOS", "linux"),
+        copy("./", "./"),
+        run("go mod download"),
+        run(f"go build -ldflags \"-s -w\" -o ${output} ./main.go")
+    ).
+
+app :-
+    (
+        from("gcr.io/distroless/static"),
+        builder("/app")::copy("/app", "/")
+    )
+    ::set_cmd(["/app"]).
