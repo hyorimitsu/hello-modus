@@ -22,10 +22,10 @@ This is the simplest sample using [Modus](https://modus-continens.com/).
 
 5. Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE.
     ```shell
-    docker tag sha256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx simple
+    docker tag sha256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx app
     ```
 
 6. Run the application.
     ```shell
-    docker run -p 8080:8080 simple
+    docker run -p 8080:8080 app
     ```

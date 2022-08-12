@@ -32,10 +32,10 @@ This is a passing arguments sample using [Modus](https://modus-continens.com/).
 
 5. Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE.
     ```shell
-    docker tag sha256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx argument
+    docker tag sha256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx app
     ```
 
 6. Run the application.
     ```shell
-    docker run -p 8080:8080 argument
+    docker run -p 8080:8080 app
     ```
