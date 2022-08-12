@@ -15,7 +15,7 @@ This is a sample of [Modus](https://modus-continens.com/), a language for buildi
 
 ## Usage
 
-Please refer to the respective README.
+Please refer to the respective README (All samples use `modus 0.1.15`).
 
 - [simple](https://github.com/hyorimitsu/hello-modus/blob/main/simple/README.md)
 - [argument](https://github.com/hyorimitsu/hello-modus/blob/main/argument/README.md)
