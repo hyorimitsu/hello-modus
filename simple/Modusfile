@@ -1,0 +1,9 @@
+app :-
+    (
+        from("golang:1.19.0-alpine3.15")::set_workdir("/go/src/github.com/hyorimitsu/hello-modus/simple"),
+        run("apk update && \
+             apk add git"),
+        copy("./", "./"),
+        run("go mod download")
+    )
+    ::set_cmd(["go", "run", "main.go"]).
